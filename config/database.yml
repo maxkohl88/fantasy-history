@@ -1,6 +1,7 @@
 development: &default
   adapter: postgresql
   database: fantasyhistory_development
+  host: localhost
   encoding: utf8
   min_messages: warning
   pool: 5

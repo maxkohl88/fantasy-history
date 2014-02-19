@@ -1,0 +1,22 @@
+%p
+  Title:
+  = @post.title
+
+ 
+%p
+  Text:
+  = @post.text
+
+%h2 Comments
+= render @post.comments
+
+
+%h2 Add a Comment: 
+
+= render "comments/form" 
+
+
+= link_to 'Back', new_post_path
+
+= link_to 'Show', post_path
+= link_to 'Edit', edit_post_path(@post)

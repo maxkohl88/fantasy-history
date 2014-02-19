@@ -19,6 +19,8 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'unicorn'
+gem 'haml'
+gem 'haml-rails'
 
 group :development do
   gem 'better_errors'
