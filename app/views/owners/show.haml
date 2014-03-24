@@ -1,0 +1,19 @@
+%h2 New Owner Entry
+
+%table
+  %tr
+    %th Owner
+    %th Year
+    %th Wins
+    %th Losses
+
+  - @owners.each do |owner| 
+    %tr
+      %td
+        = owner.name
+      %td
+        = owner.year
+      %td
+        = owner.wins
+      %td
+        = owner.losses

@@ -5,6 +5,10 @@ Fantasyhistory::Application.routes.draw do
   end
   resources :rankings
   resources :teams
+  resources :owners, :sports, :main
+  resources :histories do
+    collection { post :import }
+  end
 
   root "welcome#index"
 end

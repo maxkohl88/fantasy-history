@@ -1,0 +1,20 @@
+%h1 People's League Historical Standings
+
+%h3 Add New Result 
+
+= form_for :owner, url: owners_path do |f|
+  %p 
+    = f.label :name
+    = f.text_field :name
+  %p
+    = f.label :year
+    = f.text_field :year
+  %p
+    = f.label :wins
+    = f.text_field :wins
+  %p
+    = f.label :losses
+    = f.text_field :losses
+
+  %p
+    = f.submit

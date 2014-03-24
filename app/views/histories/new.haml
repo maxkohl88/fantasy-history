@@ -1,0 +1,6 @@
+%h2 Import History
+
+= form_tag import_history_path, multipart: true do 
+  = file_field_tag :file
+  = submit_tag "Import"
+
