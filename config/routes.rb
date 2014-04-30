@@ -6,9 +6,11 @@ Fantasyhistory::Application.routes.draw do
   resources :rankings
   resources :teams
   resources :owners, :sports, :main
-  resources :histories do
-    collection { post :import }
+  resources :leagues do
+    resources :histories do
+      collection { post :import }
+    end
   end
-
+  resources :histories
   root "welcome#index"
 end

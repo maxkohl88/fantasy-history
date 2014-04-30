@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140324215242) do
+ActiveRecord::Schema.define(version: 20140331003450) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,7 +50,22 @@ ActiveRecord::Schema.define(version: 20140324215242) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "year"
+    t.string   "league"
+    t.string   "sport"
+    t.string   "championship"
+    t.integer  "league_id"
   end
+
+  add_index "histories", ["league_id"], name: "index_histories_on_league_id", using: :btree
+
+  create_table "leagues", force: true do |t|
+    t.string   "name"
+    t.integer  "sport_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "leagues", ["sport_id"], name: "index_leagues_on_sport_id", using: :btree
 
   create_table "owners", force: true do |t|
     t.integer  "year"

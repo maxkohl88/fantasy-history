@@ -1,0 +1,28 @@
+= form_for @history do |f|
+  %p
+    = f.label :year
+  %p
+    = f.text_area :year
+  %p
+    = f.label :team
+  %p
+    = f.text_area :team
+  %p
+    = f.label :wins
+  %p
+    = f.text_area :wins
+  %p
+    = f.label :losses
+  %p
+    = f.text_area :losses
+  %p
+    = f.label :ties
+  %p
+    = f.text_area :ties
+  %p
+    = f.label :championship
+  %p
+    = f.text_area :championship
+
+  %p
+    = f.submit

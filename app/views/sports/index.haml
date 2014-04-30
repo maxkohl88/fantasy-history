@@ -1,1 +1,9 @@
 %h2 These are the sports
+
+%table
+  - @sports.each do |sport|
+    %tr
+      %td
+        = sport.name
+      %td
+        = link_to 'Show', sport

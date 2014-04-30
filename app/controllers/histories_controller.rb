@@ -5,7 +5,18 @@ class HistoriesController < ApplicationController
   end
 
   def create
-    @history = History.new(params[:history].permit(:year, :team, :wins, :losses))
+  
+    @history = History.new(history_params)
+
+    if @history.save
+     redirect_to history_url(@history)
+    else
+     render 'new' 
+    end
+  end
+
+  def show
+    @history = History.find(params[:id])
   end
 
   def import
@@ -15,5 +26,10 @@ class HistoriesController < ApplicationController
 
   def index
     @histories = History.all
+  end
+
+  private
+  def history_params
+    params.require(:history).permit(:year, :team, :wins, :losses, :ties, :championship)
   end
 end

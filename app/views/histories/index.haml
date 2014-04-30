@@ -1,1 +1,22 @@
 %h2 Historical Rankings
+
+%table
+  %tr
+    %td Year
+    %td Team
+    %td Wins
+    %td Losses
+  - @histories.each do |history|
+    %tr
+      %td
+        = history.year
+      %td
+        = history.team
+      %td
+        = history.wins
+      %td
+        = history.losses
+
+%br
+
+= link_to "New History", new_league_history_path
