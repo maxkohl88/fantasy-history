@@ -1,4 +1,4 @@
-= form_for @history do |f|
+= form_for ([@league, @league.histories.new]) do |f|
   %p
     = f.label :year
   %p

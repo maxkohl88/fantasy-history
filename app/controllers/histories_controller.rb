@@ -2,14 +2,16 @@ class HistoriesController < ApplicationController
   
   def new
     @history = History.new
+    @league = League.find(params[:league_id])
   end
 
   def create
-  
-    @history = History.new(history_params)
+    @league = League.find(params[:league_id]) 
+    @history = @league.histories.create(history_params)
+
 
     if @history.save
-     redirect_to history_url(@history)
+     redirect_to league_histories_path(@league)
     else
      render 'new' 
     end
@@ -17,6 +19,7 @@ class HistoriesController < ApplicationController
 
   def show
     @history = History.find(params[:id])
+
   end
 
   def import
@@ -25,11 +28,12 @@ class HistoriesController < ApplicationController
   end
 
   def index
-    @histories = History.all
+    @league = League.find(params[:league_id])
+    @histories = @league.histories.all
   end
 
   private
   def history_params
-    params.require(:history).permit(:year, :team, :wins, :losses, :ties, :championship)
+    params.require(:history).permit(:year, :team, :wins, :losses, :ties, :championship, :league_id)
   end
 end

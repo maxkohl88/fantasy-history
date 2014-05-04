@@ -5,12 +5,16 @@ Fantasyhistory::Application.routes.draw do
   end
   resources :rankings
   resources :teams
-  resources :owners, :sports, :main
+  resources :owners, :main
+  resources :sports do
+    resources :leagues
+  end
   resources :leagues do
     resources :histories do
-      collection { post :import }
     end
   end
-  resources :histories
   root "welcome#index"
+
+  post ':league/:league_id/histories/new' => 'histories#create'
+
 end
