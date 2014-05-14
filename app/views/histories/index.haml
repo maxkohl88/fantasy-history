@@ -1,13 +1,17 @@
-%h2 Historical Rankings
+%h2.header Historical Rankings
 
-%table
-  %tr
+%br
+
+%button.years{ type: 'select' } Year 
+
+%table.rankings
+  %tr.headers
     %td Year
     %td Team
     %td Wins
     %td Losses
-  - @histories.each do |history|
-    %tr
+  - @league.histories.each do |history|
+    %tr.history_row
       %td
         = history.year
       %td
@@ -20,3 +24,5 @@
 %br
 
 = link_to "New History", new_league_history_path
+%br
+= link_to "Back", league_path(@league)

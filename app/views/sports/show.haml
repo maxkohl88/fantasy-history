@@ -4,9 +4,11 @@
 %h2 Leagues
 
 %table
-  - @league.each do |league|
+  - @sport.leagues.each do |league|
     %tr
       %td
         = league.name
       %td
         = link_to 'Show', league
+
+= link_to 'Back', sports_path

@@ -1,4 +1,4 @@
-class SportsController < LeaguesController
+class SportsController < ApplicationController
 
   def new
     @sport = Sport.new

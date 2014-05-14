@@ -7,12 +7,30 @@
 
 ///////////////////////////////////////////////////////////////////////////////
 
-
 * {
   background-color: #FAFAFA; }
 
 h2 {
   font-size: 40px; }
+  h2.header {
+    text-align: center; 
+    font-family: fantasy;
+    color: #174032; }
 
 td {
   font-weight: bold; }
+
+tr.headers {
+  font-size: 29px; 
+  font-family: fantasy; 
+  color: #174032; }
+
+tr.history_row {
+  font-sze: 18px;
+  color: #174032;
+  font-family: fantasy;}
+
+table.rankings {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto }

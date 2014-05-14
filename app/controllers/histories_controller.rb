@@ -30,6 +30,8 @@ class HistoriesController < ApplicationController
   def index
     @league = League.find(params[:league_id])
     @histories = @league.histories.all
+
+
   end
 
   private
